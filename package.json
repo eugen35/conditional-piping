@@ -1,0 +1,39 @@
+{
+  "name": "conditional-piping",
+  "version": "0.0.1",
+  "description": "Pipe and compose with conditional stop and loop",
+  "scripts": {
+    "start": "node -r babel-register ./index.js",
+    "test-m": "mocha --require babel-register",
+    "test-m:repl": "mocha debug --require babel-register",
+    "test-m:debug": "mocha --inspect-brk --require babel-register",
+    "test-m:debug1": "node -r babel-register --inspect-brk ./node_modules/mocha/bin/mocha",
+    "test-m:devtool": "devtool --require babel-register ./node_modules/mocha/bin/_mocha -qc -- ./test/helpers.js",
+    "bench": "node -r babel-register ./bench/cPipe.js",
+    "build": "webpack"
+  },
+  "keywords": [
+    "pipe",
+    "compose",
+    "loop",
+    "conditional",
+    "fp",
+    "functional programming"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/eugen35/conditional-piping.git"
+  },
+  "license": "MIT",
+  "dependencies": {
+  },
+  "devDependencies": {
+    "babel-loader": "^7.1.2",
+    "babel-preset-env": "^1.6.1",
+    "babel-register": "^6.26.0",
+    "benchmark": "^2.1.4",
+    "chai": "^4.1.2",
+    "mocha": "^4.0.1",
+    "webpack": "^3.10.0"
+  }
+}
