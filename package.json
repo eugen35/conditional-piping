@@ -1,7 +1,8 @@
 {
   "name": "conditional-piping",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Pipe and compose with conditional stop and loop",
+  "main": "./dist/bundle.js",
   "scripts": {
     "start": "node -r babel-register ./index.js",
     "test-m": "mocha --require babel-register",
