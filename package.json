@@ -1,6 +1,6 @@
 {
   "name": "conditional-piping",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Pipe and compose with conditional stop and loop",
   "main": "./dist/bundle.js",
   "scripts": {
