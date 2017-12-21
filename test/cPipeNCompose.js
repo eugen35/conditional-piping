@@ -1,7 +1,7 @@
 import {expect} from 'chai';
 import {cPipeWithFind, cPipeWithFor, cCompose} from "../src/cPipeNCompose";
 
-describe("cPipeWithFind", function () {
+describe("cPipe && cCompose", function () {
   const inc = n => ++n;
   const dec = n => --n;
   const double = n => n * 2;

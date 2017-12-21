@@ -14,7 +14,7 @@ export const cPipeWithFind = (breakCondition)=>(...fns)=>(state)=>{
   return state;
 };
 
-// В 3-4 раза быстрее cPipeWithFind
+// Данная функция на node v9.2.0 работает в 3-4 раза быстрее, чем cPipeWithFind.
 export const cPipeWithFor = (breakCondition)=>(...fns)=>(state)=>{
   for (let i=0; i<fns.length; i++) {
     state = fns[i](state);

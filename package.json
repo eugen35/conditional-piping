@@ -1,16 +1,16 @@
 {
   "name": "conditional-piping",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Pipe and compose with conditional stop and loop",
   "main": "./dist/bundle.js",
   "scripts": {
-    "start": "node -r babel-register ./index.js",
     "test-m": "mocha --require babel-register",
     "test-m:repl": "mocha debug --require babel-register",
     "test-m:debug": "mocha --inspect-brk --require babel-register",
     "test-m:debug1": "node -r babel-register --inspect-brk ./node_modules/mocha/bin/mocha",
     "test-m:devtool": "devtool --require babel-register ./node_modules/mocha/bin/_mocha -qc -- ./test/helpers.js",
-    "bench": "node -r babel-register ./bench/cPipe.js",
+    "bench-c": "node -r babel-register ./bench/cPipe.js",
+    "bench-d": "node -r babel-register ./bench/dPipe.js",
     "build": "webpack"
   },
   "keywords": [

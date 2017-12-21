@@ -3,14 +3,39 @@
 # About
 Pipe and compose with conditional stop and loop.
 
-## Run & Test
-`npm start`
+# Get started
+```
+  import {cPipe, dPipe, wPipe, cCompose} from "conditional-piping";
 
-mocha tests: `npm run test-m` или `npm run test-m:devtool` для возможности дебага в chrome devtool (сразу запускает хром-девтул)
+  const inc = n => ++n;
+  const dec = n => --n;
+  const double = n => n * 2;
+  let breakConditionFn = res=>4===res;
 
-Также более длинный вариант дебага тестов в chrome devtool: `npm run test-m:debug`.
-После запуска скрипта, обеспечивающего возможность дебага в хром девтулс нужно:
-Зайти в chrome, в адресной строке вбить chrome://inspect/ и кликнуть Open Dedicated DevTools for Node link => Developer Tools will be opened; и нажать кнопку Resume.
+  // Run through piped functions till end or breakCondition
+  let piped = cPipe(breakConditionFn)(inc,double,dec);
+  expect(piped(1)).to.equal(4); // breaked
+
+  // Run through composed functions till end or breakCondition
+  piped = cCompose(breakConditionFn)(dec, double, inc);
+  expect(piped(1)).to.equal(4); // breaked
+
+
+  // Loop cPipe till breakCondition
+  piped = dPipe(res=>10 < res)(inc,double);
+  expect(piped(1)).to.equal(11); // breaked
+
+  // While not breakCondition loop cPipe
+  piped = wPipe(res=>10 < res)(inc,double);
+  expect(piped(1)).to.equal(11); // breaked
+```
+
+# Run & Test
+`npm run build` - для создания сброки, которая потом может быть экспортирована
+
+`npm run test-m` или `npm run test-m:devtool` для возможности дебага в chrome devtool (сразу запускает хром-девтул)
+
+`npm run bench-c` или `npm run bench-d` - запуск тестов производительности для вариантов функций
 
 # Todos
 1. Возможно, стоит сделать ещё необязательный параметр - функция для оценки того, нужно ли перейти на начало pipe. По аналогии со словами break и continue оно должно называться continueCondition
