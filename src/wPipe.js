@@ -1,6 +1,7 @@
 //import {cPipeWithFor as cPipe} from "./cPipeNCompose";
 import {cPipe} from "../index";
 /**
+ * @todo /2/ Переписать с использованием for
  * conditional pipe while loop
  * До начала выполнения pipe проверяет, если breakCondition(промежуточный результат) будет равно false, начинает выполнять pipe. По окончании pipe снова начинает цикл
  * Прекращает pipe вместе с циклом в тот момент, когда breakCondition(промежуточный результат) будет равно true.

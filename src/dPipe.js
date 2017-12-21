@@ -12,7 +12,13 @@ export const dPipeWithCPipeWithFor = (breakCondition)=>(...fns)=>(state)=>{
   return state;
 };
 
-// Данная функция на node v9.2.0 работает в 6-7 раз быстрее, чем dPipeWithCPipeWithFor
+export const dPipeWithCPipeWithForConst = (breakCondition)=>(...fns)=>(state)=>{
+  const piped = cPipe(breakCondition)(...fns);
+  do {state = piped(state)} while (!breakCondition(state));
+  return state;
+};
+
+// Данная функция на node v9.2.0 работает в 6-7 раз быстрее, чем dPipeWithCPipeWithFor и в 4-5 раз быстрее, чем dPipeWithCPipeWithForConst
 export const dPipeWithFor = (breakCondition)=>(...fns)=>(state)=>{
   do for (let i=0; i<fns.length; i++) {
     state = fns[i](state);

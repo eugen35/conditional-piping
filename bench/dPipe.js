@@ -1,5 +1,5 @@
 import Benchmark from 'benchmark';
-import {dPipeWithFor, dPipeWithCPipeWithFor} from '../src/dPipe';
+import {dPipeWithFor, dPipeWithCPipeWithFor, dPipeWithCPipeWithForConst} from '../src/dPipe';
 
 const suite = new Benchmark.Suite;
 
@@ -8,6 +8,7 @@ const double = n => n * 2;
 
 const forDPiped = dPipeWithFor(res=>10===res)(inc, double);
 const cPipeDPiped = dPipeWithCPipeWithFor(res=>10===res)(inc, double);
+const cPipeDPipedConst = dPipeWithCPipeWithForConst(res=>10===res)(inc, double);
 
 // add tests
 suite.add('dPipe with For', function() {
@@ -15,6 +16,9 @@ suite.add('dPipe with For', function() {
 })
   .add('dPipe with cPipeWithFor', function() {
     cPipeDPiped(1);
+  })
+  .add('dPipe with cPipeWithForConst', function() {
+    cPipeDPipedConst(1);
   })
   // add listeners
   .on('cycle', function(event) {
