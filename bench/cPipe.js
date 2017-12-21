@@ -1,5 +1,5 @@
 import Benchmark from 'benchmark';
-import {cPipeWithFind, cPipeWithFor} from '../src/cPipe';
+import {cPipeWithFind, cPipeWithFor} from '../src/cPipeNCompose';
 
 const suite = new Benchmark.Suite;
 

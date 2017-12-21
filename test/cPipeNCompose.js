@@ -1,5 +1,5 @@
 import {expect} from 'chai';
-import {cPipeWithFind, cPipeWithFor} from "../src/cPipe";
+import {cPipeWithFind, cPipeWithFor, cCompose} from "../src/cPipeNCompose";
 
 describe("cPipeWithFind", function () {
   const inc = n => ++n;
@@ -13,6 +13,14 @@ describe("cPipeWithFind", function () {
       expect(piped(2)).to.equal(5); // not breaked
     })
   );
+
+
+  it('cCompose',() => {
+    const piped = cCompose(res=>4===res)(dec, double, inc);
+    expect(piped(1)).to.equal(4); // breaked
+    expect(piped(2)).to.equal(5); // not breaked
+  });
+
 
 });
 

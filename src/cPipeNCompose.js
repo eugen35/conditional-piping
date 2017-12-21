@@ -22,3 +22,11 @@ export const cPipeWithFor = (breakCondition)=>(...fns)=>(state)=>{
   }
   return state;
 };
+
+export const cCompose = (breakCondition)=>(...fns)=>(state)=>{
+  for (let i=fns.length-1; 0 <= i; i--) {
+    state = fns[i](state);
+    if (breakCondition(state)) break;
+  }
+  return state;
+};
