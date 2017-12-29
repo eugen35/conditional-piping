@@ -1,5 +1,5 @@
 import {expect} from 'chai';
-import {pipeCb, composeCb, cPipeCb, cComposeCb} from "../src/cPipeCb";
+import {pipeCb, composeCb, cPipeCb, cComposeCb} from "../src/pipesAndComposesCb";
 
 describe("pipeCb", function () {
   const incCb = (n, cb) => cb(null,++n);
