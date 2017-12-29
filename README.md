@@ -33,10 +33,11 @@ Pipe and compose with conditional stop and loop.
 # Run & Test
 `npm run build` - для создания сброки, которая потом может быть экспортирована
 
-`npm run test-m` или `npm run test-m:devtool` для возможности дебага в chrome devtool (сразу запускает хром-девтул)
+`npm run __tests__-m` или `npm run __tests__-m:devtool` для возможности дебага в chrome devtool (сразу запускает хром-девтул)
 
 `npm run bench-c` или `npm run bench-d` - запуск тестов производительности для вариантов функций
 
 # Todos
 1. Возможно, стоит сделать ещё необязательный параметр - функция для оценки того, нужно ли перейти на начало pipe. По аналогии со словами break и continue оно должно называться continueCondition
 2. Возможно, в breakCondition() и continueCondition() нужно вторым параметром передавать промежуточный state до выполнения текущей функции в pipe и третьим параметром - входной стейт всей функции pipe
+3. Посмотреть скорость работы без ...args (cPipe(arr)) и без cPipe()(), а с cPipe(arr, brCond, conCond)
