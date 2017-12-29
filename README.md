@@ -41,3 +41,6 @@ Pipe and compose with conditional stop and loop.
 1. Возможно, стоит сделать ещё необязательный параметр - функция для оценки того, нужно ли перейти на начало pipe. По аналогии со словами break и continue оно должно называться continueCondition
 2. Возможно, в breakCondition() и continueCondition() нужно вторым параметром передавать промежуточный state до выполнения текущей функции в pipe и третьим параметром - входной стейт всей функции pipe
 3. Посмотреть скорость работы без ...args (cPipe(arr)) и без cPipe()(), а с cPipe(arr, brCond, conCond)
+
+# Similar packages
+https://www.npmjs.com/package/es6-async-pipe
