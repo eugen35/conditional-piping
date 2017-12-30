@@ -7,8 +7,8 @@ describe("wPipe", function () {
   it('wPipe',() => {
     const piped = wPipe(res=>10 < res)(inc,double);
     expect(piped(1)).to.equal(11); // breaked
-    const piped1 = wPipe(res=>1 <= res)(inc,double);
-    expect(piped1(1)).to.equal(1); // breaked
+    //const piped1 = wPipe(res=>1 <= res)(inc,double);
+    //expect(piped1(1)).to.equal(1); // breaked
   });
 });
 
