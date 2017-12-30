@@ -2,9 +2,9 @@ import {expect} from 'chai';
 import {pipeCb, composeCb, cPipeCb, cComposeCb, dPipeCb, wPipeCb, dComposeCb, wComposeCb} from "../src/pipesAndComposesCb";
 
 describe("pipeCb", function () {
-  const incCb = (n, cb) => cb(null,++n);
-  const doubleCb = (n, cb) => cb(null,n*2);
-  const decCb = (n, cb) => cb(null,--n);
+  const incCb = (n, cb) => setImmediate(()=>cb(null,++n));
+  const doubleCb = (n, cb) => setImmediate(()=>cb(null,n*2));
+  const decCb = (n, cb) => setImmediate(()=>cb(null,--n));
 
   it('pipeCb',done => {
     const piped = pipeCb(incCb, doubleCb, decCb);
